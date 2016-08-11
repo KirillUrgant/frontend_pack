@@ -1,0 +1,97 @@
+.top-nav-layout {
+  border-bottom: 1px solid gainsboro;
+  @include clearfix();
+
+  .top-nav {
+    a {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 10px;
+    }
+
+    span {
+      font-size: 12px;
+      color: gainsboro;
+    }
+  }
+
+  .top-nav-login {
+    list-style: none;
+    margin: 0;
+    padding:0;
+
+    li {
+      @include li-mixin();
+
+      &:nth-child(1) {
+        background-image: url("../images/icons/enter.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../images/icons/key.png");
+      }
+
+      a {
+        color: $link-color1;
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.header-layout {
+  @include clearfix();
+  padding: 10px 0;
+
+  .logo {
+    display: block;
+    width: 174px;
+    height: 70px;
+    background: transparent url("../images/logo.png") no-repeat center;
+  }
+
+  .header-contact-block {
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      @include li-mixin();
+      padding-top: 2px;
+
+      &:nth-child(1) {
+        background-image: url("../images/icons/phone.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../images/icons/mail.png");
+      }
+
+      &:nth-child(3) {
+        background-image: url("../images/icons/place.png");
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 700;
+        color: $text-color;
+      }
+
+      a {
+        color: $link-color2;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 400;
+        text-decoration: underline;
+      }
+    }
+  }
+}

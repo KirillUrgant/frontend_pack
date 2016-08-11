@@ -1,0 +1,7 @@
+{
+  "name": "scss",
+  "devDependencies": {
+    "mindy-sass": "*",
+    "jquery": "^3.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+@import "mindy";
+@import "settings";
+
+@import "index";
+
+body {
+  font-family: lato;
+}
+
+.row {
+  width: 1200px;
+  max-width: none;
+}
+
+.layout {
+  width: 100%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

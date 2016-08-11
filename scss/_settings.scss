@@ -1,0 +1,13 @@
+$text-color: #373737;
+
+$link-color1: #1188d5;
+$link-color2: #3f95cf;
+
+@mixin li-mixin() {
+  display: inline-block;
+  background-color: transparent;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  margin-left: 40px;
+}

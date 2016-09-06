@@ -1,7 +1,7 @@
 {
-  "name": "foundation",
+  "name": "frontend_pack",
   "version": "1.0.0",
-  "description": "test project on foundation",
+  "description": "simple frontend pack",
   "devDependencies": {
     "bower": "^1.7.9",
     "gulp": "^3.9.1",

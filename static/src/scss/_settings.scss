@@ -1,13 +1,7 @@
-$text-color: #373737;
+$include-xl-html-grid-classes: true;
+$row-width: rem-calc(1200);
 
-$link-color1: #1188d5;
-$link-color2: #3f95cf;
-
-@mixin li-mixin() {
-  display: inline-block;
-  background-color: transparent;
-  background-position: left top;
-  background-repeat: no-repeat;
-  padding-left: 30px;
-  margin-left: 40px;
-}
+$small-breakpoint:  em-calc(320);
+$medium-breakpoint: em-calc(768);
+$large-breakpoint:  em-calc(978);
+$xlarge-breakpoint: em-calc(1200);

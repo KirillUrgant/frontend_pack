@@ -28,7 +28,8 @@ var paths = {
     sass: 'src/scss/**/*.scss',
     css: [
         'src/fonts/lato/css/lato.css'
-    ]
+    ],
+    view: '../index.html'
 };
 
 gulp.task('js', function () {
@@ -46,8 +47,7 @@ gulp.task('images', function () {
 
 gulp.task('fonts', function () {
     return gulp.src(paths.fonts)
-        .pipe(gulp.dest(dst.fonts))
-        .pipe(livereload());
+        .pipe(gulp.dest(dst.fonts));
 });
 
 gulp.task('sass', function () {
@@ -69,12 +69,18 @@ gulp.task('css', ['sass'], function () {
         .pipe(livereload());
 });
 
+gulp.task('view', function () {
+    return gulp.src(paths.view)
+        .pipe(livereload());
+});
+
 gulp.task('watch', ['default'], function() {
     livereload.listen();
     gulp.watch(paths.js, ['js']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.sass, ['css']);
     gulp.watch(paths.fonts, ['fonts']);
+    gulp.watch(paths.view, ['view']);
 });
 
 gulp.task('clean', function() {

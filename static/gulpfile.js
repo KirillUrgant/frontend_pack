@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var csso = require('gulp-csso');
+var uglify = require('gulp-uglify');
 var livereload = require('gulp-livereload');
 
 var dst = {
@@ -35,6 +37,7 @@ var paths = {
 gulp.task('js', function () {
     return gulp.src(paths.js)
         .pipe(concat('bundle.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(dst.js))
         .pipe(livereload());
 });
@@ -64,6 +67,7 @@ gulp.task('css', ['sass'], function () {
 
     return gulp.src(temp)
         .pipe(autoprefixer())
+        .pipe(csso())
         .pipe(concat('bundle.css'))
         .pipe(gulp.dest('./dist/css'))
         .pipe(livereload());

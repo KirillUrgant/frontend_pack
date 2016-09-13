@@ -6,3 +6,4 @@ npm install
 bower install
 gulp watch
 ```
+open http://localhost:3000/

@@ -4,13 +4,17 @@
   "description": "simple frontend pack",
   "devDependencies": {
     "bower": "^1.7.9",
+    "browser-sync": "^2.15.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
+    "gulp-data": "^1.2.1",
     "gulp-livereload": "^3.8.1",
+    "gulp-nunjucks": "^2.2.0",
     "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "path": "^0.12.7"
   }
 }

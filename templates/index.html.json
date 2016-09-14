@@ -1,12 +1,4 @@
 {
-  "menu": [
-    {
-      "name": "Home",
-      "url": "/"
-    },
-    {
-      "name": "Some page",
-      "url": "/pages/page.html"
-    }
-  ]
+  "title": "Home",
+  "data": "Proin varius, velit in accumsan porta, felis diam iaculis massa, nec viverra risus dui placerat mauris. Vestibulum vulputate nulla odio, sed dictum sapien commodo at. Sed eu arcu id dui egestas efficitur. Cras elementum mollis ex, sit amet dapibus risus ultricies vel. Nam malesuada, nulla in molestie mollis, massa sem blandit tortor, sed porta arcu dui sed nibh. Vestibulum consequat, ex vitae malesuada elementum, lectus elit sollicitudin ante, a venenatis est odio ut orci. Maecenas id eros ac tortor consectetur maximus eget ac dolor. Aliquam erat volutpat. Mauris suscipit lacus vitae tellus malesuada, id bibendum ligula lacinia. Nulla sed sagittis justo. Praesent commodo eleifend tristique. Aenean id enim posuere, vehicula ex vel, consectetur leo. Sed in scelerisque neque, at scelerisque nunc. Donec sit amet hendrerit eros, vel facilisis urna."
 }

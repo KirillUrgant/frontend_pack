@@ -1,12 +1,4 @@
 {
-  "menu": [
-    {
-      "name": "Home",
-      "url": "/"
-    },
-    {
-      "name": "Some page",
-      "url": "/pages/page.html"
-    }
-  ]
+  "title": "Some page",
+  "data": "Ut sagittis finibus eleifend. Donec eu turpis fringilla, finibus diam quis, pharetra ex. Vestibulum tristique sit amet diam vehicula molestie. Fusce a dolor eu mauris faucibus mollis at eu nunc. Curabitur a tortor in sem semper scelerisque ac at sapien. Integer augue erat, placerat feugiat orci in, ultricies bibendum ipsum. In hac habitasse platea dictumst. In mattis tristique mi a placerat. Etiam pulvinar massa ut orci porttitor, eget congue tortor luctus."
 }

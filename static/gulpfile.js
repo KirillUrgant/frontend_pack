@@ -21,9 +21,6 @@ var dst = {
     views: '../compiled_templates'
 };
 
-// 1 - iterate templates directory
-// nunjuchs.configure(direcories, {})
-
 var paths = {
     js: [
         'bower_components/jquery/dist/jquery.min.js',
@@ -90,6 +87,9 @@ gulp.task('views', function () {
             var dataPath = path.dirname(file.path) + '/' + path.basename(file.path) + '.json';
             return fs.existsSync(dataPath) ? require(dataPath) : {};
         }))
+        .pipe(data(function (file) {
+            return require('../templates/global.json');
+        }))
         .pipe(nunjucks.compile())
         .pipe(gulp.dest(dst.views))
         .pipe(browserSync.stream());
@@ -99,10 +99,7 @@ gulp.task('serve', ['default'], function() {
     browserSync.init({
         server: {
             baseDir: "../",
-            index: "compiled_templates/index.html",
-            routes: {
-                "/pages": "../compiled_templates/modules/pages"
-            }
+            index: "compiled_templates/index.html"
         }
     });
 

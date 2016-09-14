@@ -1,0 +1,12 @@
+{
+  "menu": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Some page",
+      "url": "/compiled_templates/modules/pages/page.html"
+    }
+  ]
+}

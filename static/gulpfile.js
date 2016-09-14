@@ -18,23 +18,29 @@ var dst = {
     css: 'dist/css',
     images: 'dist/images',
     fonts: 'dist/fonts',
-    views: '../compile_templates'
+    views: '../compiled_templates'
 };
+
+// 1 - iterate templates directory
+// nunjuchs.configure(direcories, {})
 
 var paths = {
     js: [
         'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/foundation/js/foundation.min.js',
         'src/js/app.js'
     ],
     images: [
         'src/images/**/*'
     ],
     fonts: [
+        'src/fonts/open_sans/fonts/*',
         'src/fonts/lato/fonts/*'
     ],
     sass: 'src/scss/**/*.scss',
     css: [
-        'src/fonts/lato/css/lato.css'
+        'src/fonts/open_sans/css/stylesheet.css',
+        'src/fonts/lato/css/stylesheet.css'
     ],
     views: '../templates/**/*.html'
 };
@@ -81,16 +87,23 @@ gulp.task('css', ['sass'], function () {
 gulp.task('views', function () {
     return gulp.src(paths.views)
         .pipe(data(function (file) {
-            var dataPath = '../templates/' + path.basename(file.path) + '.json';
+            var dataPath = path.dirname(file.path) + '/' + path.basename(file.path) + '.json';
             return fs.existsSync(dataPath) ? require(dataPath) : {};
         }))
         .pipe(nunjucks.compile())
-        .pipe(gulp.dest(dst.views));
+        .pipe(gulp.dest(dst.views))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('watch', ['default'], function() {
+gulp.task('serve', ['default'], function() {
     browserSync.init({
-        server: [dst.views, "./dist"]
+        server: {
+            baseDir: "../",
+            index: "compiled_templates/index.html",
+            routes: {
+                "/pages": "../compiled_templates/modules/pages"
+            }
+        }
     });
 
     gulp.watch(paths.js, ['js']).on('change', browserSync.reload);

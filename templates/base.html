@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="http://localhost:3000/static/dist/css/bundle.css">
+    <script src="http://localhost:3000/static/dist/js/bundle.js"></script>
+    <title>Frontend pack</title>
+</head>
+<body>
+<header class="layout">
+    <div class="row">
+        <div class="columns small-12 medium-4">
+            <div class="info">
+                <img src="http://localhost:3000/static/dist/images/scss.svg" alt="">
+                <h1>Frontend pack for<br><a href="http://mindy-cms.com/">Mindy Framework</a></h1>
+            </div>
+        </div>
+        <div class="columns small-12 medium-8">
+            <nav>
+                {% for item in menu %}
+                    <a href={{ item.url }}>{{ item.name }}</a>{% if not loop.last %}|{% endif %}
+                {% endfor %}
+            </nav>
+            {% block index %}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac dignissim tellus. Curabitur quis dapibus augue. Nunc ut orci ante. Quisque convallis ornare purus ac lobortis. Mauris at nisi bibendum, aliquam purus eu, ultricies lorem. Proin lacinia ante eu felis eleifend, id euismod elit malesuada. Quisque lacinia, nibh eget molestie venenatis, metus ipsum imperdiet elit, et hendrerit nulla nulla in dui. Cras vitae tortor nec neque tincidunt sodales. Nulla facilisi. Aenean ex leo, fringilla eget purus ut, volutpat consectetur elit. Ut tristique porta tristique. Ut quis sodales nibh. Sed tincidunt justo sit amet tellus facilisis sollicitudin.</p>
+            {% endblock index %}
+        </div>
+    </div>
+</header>
+{% block content %}
+    {#TODO#}
+{% endblock content %}
+</body>
+</html>

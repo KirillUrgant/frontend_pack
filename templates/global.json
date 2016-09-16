@@ -6,7 +6,7 @@
     },
     {
       "name": "Some page",
-      "url": "/compiled_templates/modules/pages/page.html"
+      "url": "/somepage"
     }
   ]
 }

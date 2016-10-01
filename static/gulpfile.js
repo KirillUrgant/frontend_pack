@@ -99,10 +99,7 @@ gulp.task('serve', ['default'], function() {
     browserSync.init({
         server: {
             baseDir: "../",
-            index: "compiled_templates/index.html",
-            routes: {
-                "/somepage": "../compiled_templates/modules/pages/page.html"
-            }
+            index: "compiled_templates/index.html"
         }
     });
 

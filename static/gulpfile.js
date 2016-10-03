@@ -39,7 +39,8 @@ var paths = {
         'src/fonts/open_sans/css/stylesheet.css',
         'src/fonts/lato/css/stylesheet.css'
     ],
-    views: '../templates/**/*.html'
+    views: '../templates/**/*.html',
+    data_views: '../templates/**/*.json'
 };
 
 gulp.task('js', function () {
@@ -107,7 +108,7 @@ gulp.task('serve', ['default'], function() {
     gulp.watch(paths.images, ['images']).on('change', browserSync.reload);
     gulp.watch(paths.sass, ['css']);
     gulp.watch(paths.fonts, ['fonts']);
-    gulp.watch(paths.views, ['views']).on('change', browserSync.reload);
+    gulp.watch([paths.views, paths.data_views], ['views']).on('change', browserSync.reload);
 });
 
 gulp.task('clean', function() {

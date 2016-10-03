@@ -86,10 +86,17 @@ gulp.task('views', function () {
     return gulp.src(paths.views)
         .pipe(data(function (file) {
             var dataPath = path.dirname(file.path) + '/' + path.basename(file.path) + '.json';
-            return fs.existsSync(dataPath) ? require(dataPath) : {};
+            if (fs.existsSync(dataPath)) {
+                delete require.cache[require.resolve(dataPath)];
+                return require(dataPath);
+            } else {
+                return {};
+            }
         }))
         .pipe(data(function (file) {
-            return require('../templates/global.json');
+            var tpl = '../templates/global.json';
+            delete require.cache[require.resolve(tpl)];
+            return require(tpl);
         }))
         .pipe(nunjucks.compile())
         .pipe(gulp.dest(dst.views))
